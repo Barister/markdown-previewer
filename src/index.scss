@@ -1,0 +1,165 @@
+
+// Resetting style
+
+* {
+  // padding: 0;
+  // margin: 0;
+  // border: 0;
+  &, &::before, &::after {
+     box-sizing: border-box;
+  }
+}
+
+a {
+  // color: inherit;
+  // text-decoration: none;
+}
+
+ul li {
+  // list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+// h1, h2, h3, h4, h5, h6 {
+//   font-size: inherit;
+//   font-weight: inherit;
+// }
+
+button, input {
+  // font-family: inherit;
+  // font-weight: inherit;
+  // font-size: inherit;
+  cursor: pointer;
+  // color: inherit;
+  background-color: transparent;
+}
+
+
+
+// Main styles
+
+html, body {
+  height: 100%;
+  min-width: 320px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  // font-family: Roboto, sans-serif;
+  // color: #202020;
+  
+}
+
+code {
+  //  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  //    monospace;
+ }
+
+// variables
+
+$pc: 1440px;
+$tablets: 991.98px;
+$mobile: 767.98px;
+$smallMobile: 479.98px;
+
+// color palette
+$mainColor: #8f24249a;
+
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: $mainColor;
+  padding-top: clamp(1.0rem, 6vw, 2.0rem);
+  padding-bottom: clamp(1.0rem, 6vw, 2.0rem);
+}
+
+
+
+
+[class*="__container"] {
+  max-width: 99rem;
+  padding-left: clamp(1.0rem, 6vw, 6.0rem);
+  padding-right: clamp(1.0rem, 6vw, 6.0rem);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+
+.page {
+
+  &__editor {
+    width: 100%;
+    min-height: 30vh;
+    margin: 0px 0px 30px 0px;
+    
+  }
+
+  &__previewer {
+    width: 100%;
+    min-height: 30vh;
+    border: 1px solid #000;
+  }
+
+}
+
+.editor {
+  display: flex;
+  flex-direction: column;
+  &__header {
+    //border-bottom: 1px solid #000;
+    padding: 5px 10px;
+    background: #bd6060;
+    font-weight: 700;
+    border: 1px solid #000;
+    border-bottom: unset;
+  }
+  &__input {
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
+    resize: vertical;
+    padding: 5px 10px;
+    border: 1px solid #000;
+  }
+}
+
+.previewer {
+  display: flex;
+  flex-direction: column;
+  &__header {
+    border-bottom: 1px solid #000;
+    padding: 5px 10px;
+    background: #bd6060;
+    font-weight: 700;
+  }
+
+  &__content {
+    padding: 5px 10px;
+    overflow-y: auto;
+    height: 100%;
+    min-height: 100px;
+    max-width: 100%;
+    // word-break: break-word;
+    & img {
+      max-width: 100%;
+    }
+
+    & code {
+      // background-color: #fff;
+      // display: inline-block;
+    }
+  }
+}
